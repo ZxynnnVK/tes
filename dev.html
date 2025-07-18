@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Developer Panel</title>
+</head>
+<body>
+    <h2>Developer Login</h2>
+    <input type="password" id="pass" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <div id="panel" style="display:none;">
+        <button onclick="setMode('WIN')">Force WIN</button>
+        <button onclick="setMode('LOSE')">Force LOSE</button>
+        <button onclick="setMode('RANDOM')">Set RANDOM</button>
+    </div>
+    <script>
+        function login() {
+            const pass = document.getElementById("pass").value;
+            if (pass === "zxynnn0103") {
+                document.getElementById("panel").style.display = "block";
+            } else {
+                alert("Password salah.");
+            }
+        }
+        function setMode(mode) {
+            localStorage.setItem("spinMode", mode);
+            alert("Mode set to " + mode);
+        }
+    </script>
+</body>
+</html>
